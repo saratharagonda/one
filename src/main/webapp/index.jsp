@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NexusShop · modern e‑commerce</title>
+  <title>KartVibe · modern e‑commerce</title>
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,23 +18,24 @@
 
     body {
       font-family: 'Inter', -apple-system, system-ui, sans-serif;
-      background: #f5f7fb;
-      color: #0b1a2e;
+      background: #f1f4f8;
+      color: #1a2634;
       line-height: 1.5;
     }
 
-    /* ----- fresh theme (soft dark / glass) ----- */
+    /* ----- fresh theme (inspired by Flipkart: blue + white + citrus accent) ----- */
     :root {
-      --bg-page: #f5f7fb;
+      --bg-page: #f1f4f8;
       --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.70);
-      --primary: #0b1a2e;
-      --primary-soft: #1f3a5f;
-      --accent: #7c3aed;
-      --accent-glow: #a78bfa;
-      --text-muted: #4b5a6e;
-      --border-light: #e9ecf0;
-      --shadow-card: 0 12px 30px -8px rgba(0, 0, 0, 0.06);
+      --surface-glass: rgba(255, 255, 255, 0.75);
+      --primary: #1a2634;
+      --primary-soft: #2c3e50;
+      --accent: #2874f0;          /* Flipkart blue */
+      --accent-hover: #1a5fd9;
+      --accent-glow: #7aa5f9;
+      --text-muted: #5a6b7c;
+      --border-light: #e2e8f0;
+      --shadow-card: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
       --radius-xl: 24px;
       --radius-md: 16px;
       --radius-sm: 12px;
@@ -47,16 +48,16 @@
       padding: 0 24px;
     }
 
-    /* ----- header (glassmorphism) ----- */
+    /* ----- header (clean, light, with blue accent) ----- */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      border-bottom: 1px solid rgba(40, 116, 240, 0.12);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
     }
 
     .header-inner {
@@ -64,13 +65,13 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 14px 0;
+      padding: 12px 0;
       flex-wrap: wrap;
     }
 
     .brand {
       font-weight: 700;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       letter-spacing: -0.02em;
       display: flex;
       align-items: center;
@@ -79,10 +80,10 @@
     }
     .brand i {
       color: var(--accent);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
     .brand span.accent {
-      background: linear-gradient(135deg, var(--accent), #6d28d9);
+      background: linear-gradient(135deg, var(--accent), #1a5fd9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -94,7 +95,7 @@
       list-style: none;
     }
     nav.main-nav li a {
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 40px;
       font-weight: 500;
       font-size: 0.95rem;
@@ -111,7 +112,7 @@
     nav.main-nav li a:hover {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 18px -6px rgba(124, 58, 237, 0.3);
+      box-shadow: 0 8px 18px -6px rgba(40, 116, 240, 0.3);
     }
     nav.main-nav li a:hover i {
       color: white;
@@ -130,7 +131,7 @@
     }
     .search-wrapper:focus-within {
       border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+      box-shadow: 0 0 0 4px rgba(40, 116, 240, 0.12);
     }
     .search-wrapper input {
       border: none;
@@ -155,7 +156,7 @@
       gap: 6px;
     }
     .search-wrapper button:hover {
-      background: #6d28d9;
+      background: var(--accent-hover);
       transform: scale(0.97);
     }
 
@@ -180,7 +181,7 @@
       position: relative;
     }
     .icon-btn:hover {
-      background: rgba(124, 58, 237, 0.08);
+      background: rgba(40, 116, 240, 0.08);
       color: var(--accent);
     }
     .cart {
@@ -201,7 +202,7 @@
     .cart:hover {
       background: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 12px 20px -8px rgba(124, 58, 237, 0.3);
+      box-shadow: 0 12px 20px -8px rgba(40, 116, 240, 0.3);
     }
     .cart-count {
       background: white;
@@ -223,9 +224,9 @@
       padding: 4px 8px;
     }
 
-    /* ----- hero (fresh gradient) ----- */
+    /* ----- hero (blue gradient with citrus pop) ----- */
     .hero {
-      background: linear-gradient(145deg, #0b1a2e 0%, #1f3a5f 100%);
+      background: linear-gradient(145deg, #1a2a3a 0%, #2c3e50 100%);
       color: white;
       border-radius: var(--radius-xl);
       margin: 24px auto;
@@ -237,15 +238,16 @@
       gap: 30px;
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.04);
     }
     .hero::after {
       content: '';
       position: absolute;
-      right: -10%;
-      top: -30%;
+      right: -8%;
+      top: -20%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(40,116,240,0.18) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -262,7 +264,7 @@
       margin-bottom: 16px;
     }
     .hero-content h1 i {
-      color: var(--accent-glow);
+      color: #fbbf24; /* citrus yellow */
     }
     .hero-content p {
       opacity: 0.8;
@@ -301,12 +303,12 @@
     .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 24px -6px rgba(124, 58, 237, 0.4);
+      box-shadow: 0 8px 24px -6px rgba(40, 116, 240, 0.4);
     }
     .btn-primary:hover {
-      background: #6d28d9;
+      background: var(--accent-hover);
       transform: translateY(-3px);
-      box-shadow: 0 16px 32px -8px rgba(124, 58, 237, 0.5);
+      box-shadow: 0 16px 32px -8px rgba(40, 116, 240, 0.5);
     }
     .btn-ghost {
       background: rgba(255,255,255,0.06);
@@ -334,6 +336,7 @@
       font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: var(--primary);
     }
     .section-header .muted {
       color: var(--text-muted);
@@ -360,7 +363,7 @@
     .cat-card:hover {
       transform: translateY(-8px);
       border-color: var(--accent);
-      box-shadow: 0 20px 40px -12px rgba(124, 58, 237, 0.2);
+      box-shadow: 0 20px 40px -12px rgba(40, 116, 240, 0.2);
     }
     .cat-card .icon {
       font-size: 2.2rem;
@@ -424,6 +427,7 @@
       align-items: center;
       gap: 12px;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
     .price {
       font-weight: 700;
@@ -436,7 +440,7 @@
       font-size: 0.9rem;
     }
     .rating {
-      color: #f59e0b;
+      color: #fbbf24;
       font-size: 0.9rem;
       display: flex;
       align-items: center;
@@ -468,7 +472,7 @@
     }
     .add-btn:hover {
       background: var(--accent);
-      box-shadow: 0 8px 20px -8px rgba(124, 58, 237, 0.3);
+      box-shadow: 0 8px 20px -8px rgba(40, 116, 240, 0.3);
     }
     .wish-btn {
       background: transparent;
@@ -611,6 +615,7 @@
       border-radius: var(--radius-xl);
       padding: 48px 32px;
       text-align: center;
+      border: 1px solid rgba(255,255,255,0.04);
     }
     .newsletter-box h3 {
       font-size: 2rem;
@@ -637,10 +642,10 @@
     .newsletter-box .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 20px -6px rgba(124, 58, 237, 0.4);
+      box-shadow: 0 8px 20px -6px rgba(40, 116, 240, 0.4);
     }
     .newsletter-box .btn-primary:hover {
-      background: #6d28d9;
+      background: var(--accent-hover);
     }
 
     /* footer */
@@ -649,6 +654,7 @@
       border-top: 1px solid var(--border-light);
       padding: 40px 0 24px;
       color: var(--text-muted);
+      background: white;
     }
     .footer-grid {
       display: flex;
@@ -724,7 +730,7 @@
     <div class="container header-inner">
       <div style="display:flex;align-items:center;gap:8px;">
         <button class="mobile-toggle" id="mobileToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
-        <a class="brand" href="#"><i class="fas fa-store"></i> Nexus<span class="accent">Shop</span></a>
+        <a class="brand" href="#"><i class="fas fa-cube"></i> Kart<span class="accent">Vibe</span></a>
       </div>
 
       <nav class="main-nav" id="mainNav">
@@ -732,7 +738,7 @@
           <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="#" id="catMenuBtn"><i class="fas fa-th-large"></i> Categories</a></li>
           <li><a href="#"><i class="fas fa-fire"></i> Trending</a></li>
-          <li><a href="#deals"><i class="fas fa-tag"></i> Deals</a></li>
+          <li><a href="#deals"><i class="fas fa-tag"></i> Offers</a></li>
         </ul>
       </nav>
 
@@ -756,7 +762,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="#">Trending</a></li>
-        <li><a href="#deals">Deals</a></li>
+        <li><a href="#deals">Offers</a></li>
       </ul>
     </div>
   </header>
@@ -765,12 +771,12 @@
     <!-- hero -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-badge"><i class="fas fa-bolt" style="margin-right:6px;"></i> limited drop</div>
-        <h1>New <i>Winter</i> <br />Premium Picks</h1>
+        <div class="hero-badge"><i class="fas fa-bolt" style="margin-right:6px;"></i> mega savings</div>
+        <h1>New <i>Season</i> <br />Smart Picks</h1>
         <p>Discover the latest in fashion, tech & accessories. Free shipping on all orders.</p>
         <div class="btn-group">
           <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop now</button>
-          <button class="btn btn-ghost" id="exploreDeals">Explore deals</button>
+          <button class="btn btn-ghost" id="exploreDeals">Explore offers</button>
         </div>
       </div>
     </section>
@@ -877,7 +883,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h4><i class="fas fa-store" style="color:var(--accent);margin-right:8px;"></i> NexusShop</h4>
+          <h4><i class="fas fa-cube" style="color:var(--accent);margin-right:8px;"></i> KartVibe</h4>
           <p style="margin-top:8px;opacity:0.7;">Modern e‑commerce demo with a fresh vibe.</p>
           <div style="display:flex;gap:12px;margin-top:12px;">
             <a href="#" style="color:var(--text-muted);font-size:1.2rem;"><i class="fab fa-facebook"></i></a>
@@ -891,7 +897,7 @@
           <div><strong>Legal</strong><a href="#">Privacy</a><a href="#">Terms</a></div>
         </div>
       </div>
-      <div class="footer-bottom">© <span id="year"></span> NexusShop. All rights reserved.</div>
+      <div class="footer-bottom">© <span id="year"></span> KartVibe. All rights reserved.</div>
     </div>
   </footer>
 
@@ -909,157 +915,4 @@
     const PRODUCTS = [
       { id:1, title:'iPhone 14 Pro Max', price:1099, oldPrice:1199, rating:5, reviews:128, img:'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80', category:'phones' },
       { id:2, title:'MacBook Pro 14"', price:1999, rating:4, reviews:86, img:'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80', category:'laptops' },
-      { id:3, title:'Apple Watch S8', price:349, oldPrice:399, rating:5, reviews:214, img:'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-      { id:4, title:'Nike Air Max 270', price:150, rating:4, reviews:53, img:'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80', category:'footwear' },
-      { id:5, title:'Sony A7 IV', price:2499, rating:5, reviews:42, img:'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80', category:'gadgets' },
-      { id:6, title:'Chanel No.5', price:120, rating:5, reviews:189, img:'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-      { id:7, title:'Travel Backpack', price:79, oldPrice:99, rating:4, reviews:67, img:'https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-      { id:8, title:'Sony WH-1000XM5', price:399, rating:5, reviews:156, img:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80', category:'gadgets' }
-    ];
-
-    // ----- render -----
-    const categoriesGrid = document.getElementById('categoriesGrid');
-    const productsGrid = document.getElementById('productsGrid');
-    const cartCountEl = document.getElementById('cartCount');
-    const searchInput = document.getElementById('searchInput');
-    let cartCount = 0;
-
-    function renderCategories() {
-      categoriesGrid.innerHTML = '';
-      CATEGORIES.forEach(cat => {
-        const div = document.createElement('div');
-        div.className = 'cat-card';
-        div.innerHTML = `<div class="icon"><i class="fas ${cat.icon}"></i></div><h4>${cat.name}</h4><div class="sub">explore</div>`;
-        div.addEventListener('click', ()=> {
-          searchInput.value = cat.name;
-          filterProducts(cat.name);
-          document.getElementById('prod-title').scrollIntoView({ behavior:'smooth', block:'start' });
-        });
-        categoriesGrid.appendChild(div);
-      });
-    }
-
-    function renderProducts(list) {
-      productsGrid.innerHTML = '';
-      list.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" />
-          <div class="product-body">
-            <h5>${p.title}</h5>
-            <div class="category-tag">${p.category}</div>
-            <div class="price-row">
-              <span class="price">$${p.price.toLocaleString()}</span>
-              ${p.oldPrice ? `<span class="old-price">$${p.oldPrice.toLocaleString()}</span>` : ''}
-              <span class="rating">${'★'.repeat(Math.round(p.rating))} <span>(${p.reviews})</span></span>
-            </div>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn" data-id="${p.id}"><i class="fas fa-plus"></i> Add</button>
-            <button class="wish-btn"><i class="far fa-heart"></i></button>
-          </div>
-        `;
-        productsGrid.appendChild(card);
-      });
-      productsGrid.querySelectorAll('.add-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const id = Number(btn.dataset.id);
-          addToCart(id);
-        });
-      });
-    }
-
-    function addToCart(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      cartCount++;
-      cartCountEl.textContent = cartCount;
-      const btn = document.querySelector(`.add-btn[data-id="${id}"]`);
-      if (btn) {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Added';
-        btn.style.background = '#22c55e';
-        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 1200);
-      }
-    }
-
-    function filterProducts(q) {
-      const query = String(q || '').trim().toLowerCase();
-      if (!query) { renderProducts(PRODUCTS); return; }
-      const filtered = PRODUCTS.filter(p => p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query));
-      renderProducts(filtered);
-    }
-
-    // ----- search -----
-    document.getElementById('searchBtn').addEventListener('click', ()=> filterProducts(searchInput.value));
-    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') filterProducts(e.target.value); });
-
-    // ----- mobile toggle -----
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileToggle.addEventListener('click', ()=> {
-      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-    });
-
-    // ----- deal timer -----
-    (function() {
-      const target = new Date(Date.now() + (24 * 60 + 36) * 60 * 1000);
-      function tick() {
-        const diff = target - new Date();
-        if (diff <= 0) return;
-        const d = Math.floor(diff / (24*3600*1000));
-        const h = Math.floor((diff % (24*3600*1000)) / (3600*1000));
-        const m = Math.floor((diff % (3600*1000)) / (60*1000));
-        const s = Math.floor((diff % (60*1000)) / 1000);
-        document.getElementById('dealDays').textContent = d;
-        document.getElementById('dealHours').textContent = String(h).padStart(2,'0');
-        document.getElementById('dealMinutes').textContent = String(m).padStart(2,'0');
-        document.getElementById('dealSeconds').textContent = String(s).padStart(2,'0');
-      }
-      tick();
-      setInterval(tick, 1000);
-    })();
-
-    // ----- newsletter -----
-    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('newsletterEmail').value.trim();
-      const msg = document.getElementById('newsletterMsg');
-      if (!email || !email.includes('@')) {
-        msg.style.display = 'block';
-        msg.textContent = 'Please enter a valid email.';
-        msg.style.color = '#fca5a5';
-        return;
-      }
-      msg.style.display = 'block';
-      msg.textContent = '🎉 Thanks! You\'re subscribed.';
-      msg.style.color = '#a7f3d0';
-      document.getElementById('newsletterEmail').value = '';
-      setTimeout(()=> msg.style.display = 'none', 3000);
-    });
-
-    // ----- ui buttons -----
-    document.getElementById('shopNow').addEventListener('click', ()=> {
-      document.getElementById('prod-title').scrollIntoView({ behavior:'smooth', block:'start' });
-    });
-    document.getElementById('exploreDeals').addEventListener('click', ()=> {
-      document.getElementById('deals').scrollIntoView({ behavior:'smooth' });
-    });
-    document.getElementById('buyDeal').addEventListener('click', ()=> {
-      cartCount++;
-      cartCountEl.textContent = cartCount;
-      alert('Added to cart (demo)');
-    });
-    document.getElementById('catMenuBtn').addEventListener('click', (e)=> {
-      e.preventDefault();
-      document.getElementById('cat-title').scrollIntoView({ behavior:'smooth' });
-    });
-
-    // ----- init -----
-    renderCategories();
-    renderProducts(PRODUCTS);
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      { id:3, title:'Apple Watch S8', price:349, oldPrice:399, rating:5, reviews:214, img
